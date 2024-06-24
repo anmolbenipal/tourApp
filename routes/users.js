@@ -4,15 +4,15 @@ const router = express.Router()
 import { verifyAdmin, verifyUser } from '../utils/verifyToken.js';
 
 //update user
-router.put("/:id", verifyUser ,updateUser);
+router.put("/api/v1/:id", verifyUser ,updateUser);
 
 //delete user
-router.delete("/:id",verifyUser , deleteUser);
+router.delete("/api/v1/:id",verifyUser , deleteUser);
 
 //get single user
-router.get("/:id",verifyUser , getSingleUser);
+router.get("/api/v1/:id",verifyUser , getSingleUser);
 
 //get all users
-router.get("/",verifyAdmin , getAllUser);
+router.get("/api/v1/",verifyAdmin , getAllUser);
 
 export default router
